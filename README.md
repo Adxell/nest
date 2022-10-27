@@ -29,6 +29,16 @@ docker compose up -d
 http://localhost:3000/api/v1/seed
 ```
 
+# Producion build
+
+1. Crear el archivo `.env.prodc`
+2. Llenar las variables de producion
+3. Crear la nueva imagen
+
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+
 # Stack usado
 
 - MongoDB
