@@ -1,6 +1,4 @@
-import { join } from 'path';
 import { Module } from '@nestjs/common';
-import { ServeStaticModule } from '@nestjs/serve-static'
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose'
 
@@ -15,9 +13,6 @@ import { JoiValidationSchema } from './config/joi.validation';
     ConfigModule.forRoot({
       load: [EnvConfiguration],
       validationSchema: JoiValidationSchema
-    }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public')
     }),
     MongooseModule.forRoot(process.env.MONGO_DB),
     PokemonModule,
